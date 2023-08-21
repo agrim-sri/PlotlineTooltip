@@ -34,7 +34,7 @@ struct TooltipView: View {
                     .padding()
                     .background(Color.white)
                     .cornerRadius(10)
-                    .axisToolTip(isPresented: $data.isPresented[index], alignment: alignments[data.alignmentIndexes[index]], constant: data.constants[index], foreground: {
+                    .tooltip(isPresented: $data.isPresented[index], alignment: alignments[data.alignmentIndexes[index]], constant: data.constants[index], foreground: {
                         HStack {
                             Image(data.imageNames[index])
                                 .resizable()

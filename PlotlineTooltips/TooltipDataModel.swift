@@ -19,17 +19,18 @@ class TooltipData: ObservableObject, Codable {
     @Published var textColors: [Color] = Array(repeating: Color.white, count: 5)
     @Published var textSizes: [CGFloat] = Array(repeating: 16.0, count: 5)
     @Published var textPaddings: [CGFloat] = Array(repeating: 8.0, count: 5)
-
+    
     
     let alignments: [Alignment] = [.center, .leading, .trailing, .top, .bottom, .topLeading, .topTrailing, .bottomLeading, .bottomTrailing]
     
     init() {
-            // All properties are already provided default values, so the initializer body can be empty
-        }
+        // All properties are already provided default values, so the initializer body can be empty
+        self.loadFromUserDefaults()
+    }
     
     enum CodingKeys: String, CodingKey {
-            case currentButtonIndex, imageNames, tooltips, constants, alignmentIndexes, isPresented, textColors, textSizes, textPaddings
-        }
+        case currentButtonIndex, imageNames, tooltips, constants, alignmentIndexes, isPresented, textColors, textSizes, textPaddings
+    }
     
     struct RGBAColor: Codable {
         var red: CGFloat
@@ -50,13 +51,13 @@ class TooltipData: ObservableObject, Codable {
         // Decode Color
         let colorComponents = try container.decode([RGBAColor].self, forKey: .textColors)
         textColors = colorComponents.map { Color(rgbaComponents: ($0.red, $0.green, $0.blue, $0.opacity)) }
-
+        
         //textColors = colorComponents.map { Color(rgbaComponents: $0) }
         
         textSizes = try container.decode([CGFloat].self, forKey: .textSizes)
         textPaddings = try container.decode([CGFloat].self, forKey: .textPaddings)
     }
-
+    
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(currentButtonIndex, forKey: .currentButtonIndex)
@@ -74,7 +75,7 @@ class TooltipData: ObservableObject, Codable {
             return nil
         }
         try container.encode(colorComponents, forKey: .textColors)
-
+        
         
         try container.encode(textSizes, forKey: .textSizes)
         try container.encode(textPaddings, forKey: .textPaddings)
@@ -92,7 +93,7 @@ extension Color {
         self.init(red: Double(rgbaComponents.red), green: Double(rgbaComponents.green), blue: Double(rgbaComponents.blue), opacity: Double(rgbaComponents.opacity))
     }
     
-
+    
 }
 
 extension Alignment {
@@ -100,7 +101,7 @@ extension Alignment {
         switch self {
         case .center: return "center"
         case .leading: return "leading"
-        // ... Handle other cases ...
+            // ... Handle other cases ...
         default: return "unknown"
         }
     }
@@ -109,39 +110,9 @@ extension Alignment {
         switch value {
         case "center": self = .center
         case "leading": self = .leading
-        // ... Handle other cases ...
+            // ... Handle other cases ...
         default: return nil
         }
     }
 }
-
-
-extension TooltipData {
-    
-    func saveToUserDefaults() {
-        let encoder = JSONEncoder()
-        if let encodedData = try? encoder.encode(self) {
-            UserDefaults.standard.set(encodedData, forKey: "TooltipData")
-        }
-    }
-    
-    func loadFromUserDefaults() {
-        let decoder = JSONDecoder()
-        if let savedData = UserDefaults.standard.data(forKey: "TooltipData"),
-           let loadedData = try? decoder.decode(TooltipData.self, from: savedData) {
-            
-            // Update each property with the loaded data's properties
-            self.currentButtonIndex = loadedData.currentButtonIndex
-            self.imageNames = loadedData.imageNames
-            self.tooltips = loadedData.tooltips
-            self.constants = loadedData.constants
-            self.alignmentIndexes = loadedData.alignmentIndexes
-            self.isPresented = loadedData.isPresented
-            self.textColors = loadedData.textColors
-            self.textSizes = loadedData.textSizes
-            self.textPaddings = loadedData.textPaddings
-        }
-    }
-}
-
 

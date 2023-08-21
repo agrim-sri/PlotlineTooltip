@@ -10,7 +10,7 @@ import SwiftUI
 
 public extension View {
     
-    func axisToolTip<F: View>(isPresented: Binding<Bool>,
+    func tooltip<F: View>(isPresented: Binding<Bool>,
                      alignment: Alignment = .center,
                      constant: ATConstant = .init(),
                      @ViewBuilder foreground: @escaping () -> F) -> some View {
@@ -20,7 +20,7 @@ public extension View {
                                           foreground: foreground))
     }
     
-    func axisToolTip<B: View, F: View>(isPresented: Binding<Bool>,
+    func toolTip<B: View, F: View>(isPresented: Binding<Bool>,
                      alignment: Alignment = .center,
                      constant: ATConstant = .init(),
                      @ViewBuilder background: @escaping () -> B,

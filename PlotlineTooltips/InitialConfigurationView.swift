@@ -23,6 +23,7 @@ struct InitialConfigurationView: View {
     var body: some View {
         ScrollView{
             VStack {
+                
                 Menu("Target Button: \(currentButtonIndex + 1)") {
                     ForEach(0..<5) { index in
                         Button(action: {
@@ -43,11 +44,17 @@ struct InitialConfigurationView: View {
                                   imageName: $data.imageNames[currentButtonIndex],
                                   alignments: data.alignments)
                 
+
+                
                 Spacer()
                 
                 Button("Render Tooltip") {
                     appState.isTooltipViewActive = true
                     data.saveToUserDefaults()
+                    for (key, value) in UserDefaults.standard.dictionaryRepresentation() {
+                        print("\(key): \(value)")
+                    }
+
                 }
                 .padding()
                 .background(Color.blue)
