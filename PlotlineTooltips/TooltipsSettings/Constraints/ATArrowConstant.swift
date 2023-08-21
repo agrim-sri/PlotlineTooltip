@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-public struct ATArrowConstant: Equatable {
+public struct ATArrowConstant: Equatable, Codable {
     
     public var width: CGFloat
     public var height: CGFloat

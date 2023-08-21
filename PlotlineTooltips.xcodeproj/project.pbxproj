@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8713FEA92A91DFF40020C203 /* FrameModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8713FEA82A91DFF40020C203 /* FrameModifier.swift */; };
-		8713FEAB2A91FB830020C203 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8713FEAA2A91FB830020C203 /* GoogleService-Info.plist */; };
 		87206AAB2A912F31007258A8 /* PlotlineTooltipsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87206AAA2A912F31007258A8 /* PlotlineTooltipsApp.swift */; };
 		87206AAF2A912F33007258A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87206AAE2A912F33007258A8 /* Assets.xcassets */; };
 		87206AB22A912F33007258A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87206AB12A912F33007258A8 /* Preview Assets.xcassets */; };
@@ -36,11 +35,11 @@
 		87206AF32A913CDA007258A8 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87206AF22A913CDA007258A8 /* View+Extensions.swift */; };
 		87206AF52A913CFC007258A8 /* TooltipShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87206AF42A913CFC007258A8 /* TooltipShape.swift */; };
 		87206AF72A913D24007258A8 /* AxisTooltip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87206AF62A913D24007258A8 /* AxisTooltip.swift */; };
+		CE9794EC2A933835001E45DD /* TooltipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9794EB2A933835001E45DD /* TooltipViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8713FEA82A91DFF40020C203 /* FrameModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameModifier.swift; sourceTree = "<group>"; };
-		8713FEAA2A91FB830020C203 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		87206AA72A912F30007258A8 /* PlotlineTooltips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlotlineTooltips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87206AAA2A912F31007258A8 /* PlotlineTooltipsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotlineTooltipsApp.swift; sourceTree = "<group>"; };
 		87206AAE2A912F33007258A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +55,7 @@
 		87206AF22A913CDA007258A8 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		87206AF42A913CFC007258A8 /* TooltipShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipShape.swift; sourceTree = "<group>"; };
 		87206AF62A913D24007258A8 /* AxisTooltip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AxisTooltip.swift; sourceTree = "<group>"; };
+		CE9794EB2A933835001E45DD /* TooltipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TooltipViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +85,6 @@
 		87206A9E2A912F30007258A8 = {
 			isa = PBXGroup;
 			children = (
-				8713FEAA2A91FB830020C203 /* GoogleService-Info.plist */,
 				87206AA92A912F30007258A8 /* PlotlineTooltips */,
 				87206AA82A912F30007258A8 /* Products */,
 			);
@@ -105,6 +104,7 @@
 				87206AE42A913BF6007258A8 /* TooltipsSettings */,
 				87206AAA2A912F31007258A8 /* PlotlineTooltipsApp.swift */,
 				87206ADC2A913762007258A8 /* TooltipDataModel.swift */,
+				CE9794EB2A933835001E45DD /* TooltipViewModel.swift */,
 				87206ADE2A913785007258A8 /* TooltipView.swift */,
 				87206AE02A9137A4007258A8 /* ConfigurationView.swift */,
 				87206AE22A9137C9007258A8 /* InitialConfigurationView.swift */,
@@ -247,7 +247,6 @@
 			files = (
 				87206AB22A912F33007258A8 /* Preview Assets.xcassets in Resources */,
 				87206AAF2A912F33007258A8 /* Assets.xcassets in Resources */,
-				8713FEAB2A91FB830020C203 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +267,7 @@
 				87206AEB2A913C61007258A8 /* ATArrowConstant.swift in Sources */,
 				8713FEA92A91DFF40020C203 /* FrameModifier.swift in Sources */,
 				87206AAB2A912F31007258A8 /* PlotlineTooltipsApp.swift in Sources */,
+				CE9794EC2A933835001E45DD /* TooltipViewModel.swift in Sources */,
 				87206AF32A913CDA007258A8 /* View+Extensions.swift in Sources */,
 				87206AED2A913C7E007258A8 /* ATBorderConstant.swift in Sources */,
 				87206AF52A913CFC007258A8 /* TooltipShape.swift in Sources */,
