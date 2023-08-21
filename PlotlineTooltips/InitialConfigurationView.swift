@@ -47,6 +47,7 @@ struct InitialConfigurationView: View {
                 
                 Button("Render Tooltip") {
                     appState.isTooltipViewActive = true
+                    data.saveToUserDefaults()
                 }
                 .padding()
                 .background(Color.blue)
